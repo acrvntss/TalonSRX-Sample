@@ -15,12 +15,13 @@ public class Robot extends IterativeRobot {
    //I assumed you would use arcadeDrive, so I used DifferentialDrive.                              
    private DifferentialDrive roboDrive =  new DifferentialDrive( lMotors, rMotors );                          
     
-    
+   //happystick
+   private Joystick joystick = new Joystick( port );
     
     
     @Override
     public void teleopPeriodic() {
-      roboDrive.arcadeDrive( xSpeed, zRotation ); //You can input your speed and rotation values as desired( joystick, xbox, etc) 
+      roboDrive.arcadeDrive( joystick.getY(), joystick.getX() );// I think my parameters were like this. Not too sure. 
     }
 
 }
