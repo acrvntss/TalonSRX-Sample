@@ -1,0 +1,26 @@
+package //I dont remember the name of the package.... sorry But I am sure you know.
+
+//I dont exactly know the exact location of the the imports, but Eclipse should suggest to import the classes needed. 
+
+
+
+
+public class Robot extends IterativeRobot {
+
+   //I used the WPI_TalonSRX class because it allows you to work with TalonSRX with WPILIB library. 
+   private SpeedControllerGroup lMotors = ( new WPI_TalonSRX( ID on webdashboard ), new WPI_TalonSRX( ID on webdashboard ) ),
+                                rMotors = ( new WPI_TalonSRX( ID on webdashboard ), new WPI_TalonSRX( ID on webdashboard ) );
+                              
+                              
+   //I assumed you would use arcadeDrive, so I used DifferentialDrive.                              
+   private DifferentialDrive roboDrive =  new DifferentialDrive( lMotors, rMotors );                          
+    
+    
+    
+    
+    @Override
+    public void teleopPeriodic() {
+      roboDrive.arcadeDrive( xSpeed, zRotation ); //You can input your speed and rotation values as desired( joystick, xbox, etc) 
+    }
+
+}
